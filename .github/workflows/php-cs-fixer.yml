@@ -1,0 +1,13 @@
+name: php-cs-fixer
+on: [push, pull_request]
+jobs:
+  php-cs-fixer:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@develop
+      - name: prepare
+        run: |
+             wget https://cs.symfony.com/download/php-cs-fixer-v2.phar -O php-cs-fixer
+             chmod a+x php-cs-fixer
+      - name: php-cs-fixer
+        run: php php-cs-fixer fix --dry-run --diff --diff-format udiff ./
