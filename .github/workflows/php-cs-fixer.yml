@@ -4,7 +4,7 @@ jobs:
   php-cs-fixer:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@develop
+      - uses: actions/checkout@v2
       - name: prepare
         run: |
              wget https://cs.symfony.com/download/php-cs-fixer-v2.phar -O php-cs-fixer
